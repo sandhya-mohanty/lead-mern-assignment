@@ -1,8 +1,10 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
-const LeadsManagementApp = () => {
+const App = () => {
   const [leads, setLeads] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -362,9 +364,8 @@ const LeadsManagementApp = () => {
                   <option value="100">100</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                  </svg>
+                <RiArrowDropDownLine />
+
                 </div>
               </div>
               <span className="ml-4">
@@ -377,18 +378,16 @@ const LeadsManagementApp = () => {
                 disabled={filters.page === 1}
                 className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-full disabled:opacity-50"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
+             <FaChevronLeft />
+
               </button>
               <button
                 onClick={() => handlePageChange(1)}
                 disabled={filters.page === totalPages}
                 className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-full disabled:opacity-50"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
+              <FaChevronRight />
+
               </button>
             </div>
           </div>
@@ -398,4 +397,4 @@ const LeadsManagementApp = () => {
   );
 };
 
-export default LeadsManagementApp;
+export default App;
