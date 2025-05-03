@@ -131,23 +131,26 @@ const App = () => {
       <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <div className="bg-white shadow-md rounded-lg p-6">
           {/* Search Bar Section */}
+          <div className='bg-gray-100 p-4 my-5'>
+
+          
           <div className="flex flex-col md:flex-row gap-4 mb-6">
-            <div className="flex-1">
+            <div className="flex-1 ">
               <input
                 type="text"
                 placeholder="Search by customer number, lead ID, property ID, agent, name..."
                 value={filters.search}
                 onChange={(e) => handleFilterChange('search', e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full h-13 p-2 border-b-emerald-800 border-b-2 bg-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>
-            <div className="md:w-1/3">
+            <div className="md:w-1/4">
               <input
                 type="text"
                 placeholder="Search by postcode"
                 value={filters.postcode}
                 onChange={(e) => handleFilterChange('postcode', e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full h-13 p-2 border-b-emerald-800 border-b-2 bg-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>
             <div className="flex gap-2">
@@ -157,7 +160,7 @@ const App = () => {
                   type="date"
                   value={filters.from}
                   onChange={(e) => handleDateChange('from', e.target.value)}
-                  className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="p-2 border-b-emerald-800 border-b-2 bg-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
               <div className="flex items-center">
@@ -166,14 +169,14 @@ const App = () => {
                   type="date"
                   value={filters.until}
                   onChange={(e) => handleDateChange('until', e.target.value)}
-                  className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="p-2 border-b-emerald-800 border-b-2 bg-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
             </div>
           </div>
 
           {/* Filter Tags */}
-          <div className="mb-6">
+          <div className="mb-6 flex flex-row justify-between flex-wrap">
             <div className="flex flex-wrap gap-2 mb-4">
               <div className="mr-2 flex items-center">
                 <span className="font-medium mr-2">Status:</span>
@@ -253,7 +256,7 @@ const App = () => {
                 </div>
               </div>
             </div>
-            
+            </div>
             {/* Reset Filters Button */}
             {(filters.search || filters.postcode || filters.status || filters.type || 
               filters.broker || filters.subscription || filters.from || filters.until) && (
@@ -279,7 +282,7 @@ const App = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white">
               <thead>
-                <tr className="bg-gray-50 border-b">
+                <tr className=" border-b">
                   <th className="py-3 px-4 text-left">Date</th>
                   <th className="py-3 px-4 text-left">Lead ID</th>
                   <th className="py-3 px-4 text-left">Object ID</th>
